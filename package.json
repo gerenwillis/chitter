@@ -1,0 +1,26 @@
+{
+  "name": "twitter-clone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon server.js",
+    "client": "cd './client' && npm run start",
+    "test": "node --inspect-brk=5001 server.js",
+    "testDev": "concurrently \"npm run test\" \"npm run client\""
+  },
+  "author": "Richard Willis richardgeren@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-rate-limit": "^5.0.0",
+    "monk": "^7.0.0",
+    "styled-components": "^4.3.2"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.1",
+    "nodemon": "^1.19.1"
+  }
+}
