@@ -2,22 +2,9 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 
 class ChitterFeed extends Component{
-    constructor() {
+    constructor(props) {
         super();
-        this.state = {
-            chitters: []
-        }
-    }
-
-    getData(url = '') {
-        return fetch(url)
-            .then(response => response.json())
-            .catch(console.log('GET request failed'));
-    }
-
-    async componentDidMount() {
-        const chitters = await this.getData('/chits');
-        this.setState({chitters})
+        this.state = {};
     }
 
     SectionWrapper = styled.div`
@@ -56,7 +43,7 @@ class ChitterFeed extends Component{
     render() {
         return (
             <this.SectionWrapper>
-                {this.state.chitters.reverse().map(chitter => {
+                {this.props.chitters.reverse().map(chitter => {
                     return (
                         <this.ChitWrapper key={chitter._id}>
                             <this.ChitName>{chitter.name}</this.ChitName>
@@ -66,7 +53,6 @@ class ChitterFeed extends Component{
                     )
                 })}
             </this.SectionWrapper>
-
         )
     }
 }

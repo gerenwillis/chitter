@@ -28,7 +28,8 @@ class ChitForm extends React.Component {
             name: '',
             chit: '',
             chitLength: 0
-        })
+        });
+        this.props.getData('/chits');
     }
 
     postData(url = '', data = {}) {

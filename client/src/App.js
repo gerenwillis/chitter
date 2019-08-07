@@ -1,6 +1,5 @@
 import React from 'react';
-import ChitForm from './components/ChitForm';
-import ChitterFeed from './components/ChitterFeed';
+import Chitter from './Chitter'
 import Header from './components/Header';
 
 
@@ -15,8 +14,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <ChitForm />
-      <ChitterFeed />
+      <Chitter />
     </div>
   );
 }
